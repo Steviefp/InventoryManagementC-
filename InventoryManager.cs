@@ -38,12 +38,16 @@ class InventoryManager
     }
     public void updateItem(Item item, string field, string val)
     {
-        int intVal = int.Parse(val);
-        double doubleVal = double.Parse(val);
+
+        int intVal;
+        double doubleVal;
+        
+        
 
         switch (field)
         {
             case "id":
+                intVal = int.Parse(val);
                 item.id = intVal;
                 break;
             case "name":
@@ -53,9 +57,11 @@ class InventoryManager
                 item.description = val;
                 break;
             case "quantity":
+                intVal = int.Parse(val);
                 item.quantity = intVal;
                 break;
             case "price":
+                doubleVal = double.Parse(val);
                 item.price = doubleVal;
                 break;
 

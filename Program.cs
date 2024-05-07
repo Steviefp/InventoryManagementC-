@@ -79,24 +79,21 @@ class Program
         Console.WriteLine("What value would you like to update it too?");
         string updatedValue = Console.ReadLine();
 
-        try
-        {
-            inventory.updateItem(item, userInput, updatedValue);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
+        
+        inventory.updateItem(item, userInput, updatedValue);
+        
+        
+
     }
     static void Main(string[] args)
     {
         //Item testItemOne = new Item(1, "testName", "testDescription", 3, 3.44);
-        //Item testItemTwo = new Item(2, "testName2", "testDescription2", 222, 22.22);
+        Item testItemTwo = new Item(2, "test", "testDescription2", 222, 22.22);
 
         InventoryManager inventory = new InventoryManager();
 
         //inventory.addItem(testItemOne);
-        //inventory.addItem(testItemTwo);
+        inventory.addItem(testItemTwo);
 
 
 
@@ -106,6 +103,7 @@ class Program
         bool gameLoop = true;
         int counter = 0;
         while (gameLoop){
+            counter++;
             Console.WriteLine("What would you like to do? 1. add item, 2. remove item, " +
                             "3. print item, 4. update item, 5. quit");
             int userChoice = int.Parse(Console.ReadLine());
